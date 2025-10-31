@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title> MSB library</title>
+	<link rel="shortcut icon" type="image/png" href="/favicon.ico">
+	<link rel="stylesheet" href="css/genel.css">
+</head>
+
+<body  class="body">
+<center>
+<div  id="container">
+
+	<div id="header">
+		<div id="logo">
+		<a  target="_blank" href="http:www.medeniyet.edu.tr">   
+		<img style="margin-top:15px" src="logo.png" 
+		alt="imü logo">
+		</a>
+		</div>
+	</div>
+
+	<div id="menu">
+		<ul>
+			<li><a onclick="showSection('hakkimizda')">Hakkımızda</a></li>
+			<li><a onclick="showSection('misyon')">Misyon</a></li>
+			<li><a onclick="showSection('iletisim')">İletişim</a></li>
+			<li><a onclick="showSection('login')">Login</a></li>
+		</ul>
+	</div>
+	
+	<div id="content">
+		<div id="hakkimizda" class="section">
+			<h2>Hakkımızda</h2>
+			<p>MSB Library, kullanıcı dostu ve modern bir kütüphane otomasyon sistemidir. Kitaplara kolay erişim ve yönetim sağlar.</p>
+		</div>
+
+		<div id="misyon" class="section">
+			<h2>Misyon</h2>
+			<p><strong>Misyon:</strong> Kitap ve bilgiye kolay erişim sağlamak ve kütüphane kullanımını yaygınlaştırmak.</p>
+		</div>
+
+		<div id="iletisim" class="section">
+			<h2>İletişim</h2>
+			<p>Email: info@msblibrary.com</p>
+			<p>Telefon: 123-456-7890</p>
+			<p>Adres: Medeniyet Üniversitesi Ziraat Bankası Kütüphane Binası</p>
+		</div>
+
+		<div id="login" class="section">
+			<h2>Login</h2>
+			<form onsubmit="return loginCheck()" action="" method="post">
+
+				<label for="username">Kullanıcı Adı:</label><br>
+				<input type="text" id="username" name="username"><br><br>
+
+				<label for="password">Şifre</label><br>
+				<input type="password" id="password" name="password"><br><br>
+
+				<input type="submit" value="Giriş Yap">
+
+			</form>
+			<p style="margin-top:10px; color:red; font-size:14px;">
+				<em>Deneme kullanıcı adı: <strong>admin</strong> | Şifre: <strong>1234</strong></em>
+			</p>
+		</div>
+
+		<div id="admin" class="section">
+			<h2>Admin Paneli</h2>
+			<p>Burada kitap ekleme, silme ve kullanıcı yönetimi yapılabilir.</p>
+		</div>
+	</div>
+	
+	<div id="footer">
+		© 2025 MSB Library
+	</div>
+
+</div>
+</center>
+
+<script>
+
+	showSection("hakkimizda");
+
+	function showSection(sectionId) {
+		document.getElementById("hakkimizda").style.display = "none";
+		document.getElementById("misyon").style.display = "none";
+		document.getElementById("iletisim").style.display = "none";
+		document.getElementById("login").style.display = "none";
+		document.getElementById("admin").style.display = "none";
+
+		document.getElementById(sectionId).style.display = "block";
+	}
+
+	function loginCheck() {
+	let user = document.getElementById("username").value;
+	let pass = document.getElementById("password").value;
+
+	if (user === "admin" && pass === "1234") {
+		showSection("admin");
+		return false;
+	} else {
+		alert("Hatalı kullanıcı adı veya şifre!");
+		return false;
+	}
+	}
+</script>
+
+</body>
+
+</html>
